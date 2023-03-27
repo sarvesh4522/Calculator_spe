@@ -20,6 +20,7 @@ public class Calculator
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
         double number1, number2;
+        scanner.nextLine();
         do
         {
             System.out.println("Calculator-using-DevOps, choose an operation");
