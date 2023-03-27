@@ -38,6 +38,11 @@ pipeline {
                 sh 'docker rmi -f sarvesh4522/calculator_spe:latest'
             }
         }
+        stage('Deploy and Run Image'){
+            steps {
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'playbook.yml', sudoUser: null
+            }
+        }
     }
 }
 
