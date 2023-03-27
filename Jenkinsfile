@@ -30,6 +30,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                     sh 'docker push sarvesh4522/calculator_spe:latest'
+            }
         }
         stage('Clean Docker Images') {
             steps {
