@@ -20,6 +20,22 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Build Docker Images') {
+            steps {
+                sh 'docker build -t sarvesh4522/calculator_spe:latest .'
+            }
+        }
+        stage('Publish Docker Images') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                    sh 'docker push sarvesh4522/calculator_spe:latest'
+        }
+        stage('Clean Docker Images') {
+            steps {
+                sh 'docker rmi -f sarvesh4522/calculator_spe:latest'
+            }
+        }
     }
 }
 
