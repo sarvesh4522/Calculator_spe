@@ -11,7 +11,7 @@ pipeline {
                 // Get code from a GitHub repository
                 // Make sure to add your own git url and credentialsId
 				git url: 'https://github.com/sarvesh4522/Calculator_spe.git',
-				branch: 'main',
+				branch: 'main'
             }
         }
         stage('Maven Build') {
