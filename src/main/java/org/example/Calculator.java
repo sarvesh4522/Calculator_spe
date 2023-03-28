@@ -61,7 +61,7 @@ public class Calculator
                     // find natural logarithm
                     System.out.print("Enter a number : ");
                     number1 = scanner.nextDouble();
-                    System.out.println("Square of " + number1 + " is : " + calculator.naturalLog(number1));
+                    System.out.println(" logn of " + number1 + " is : " + calculator.naturalLog(number1));
                     System.out.println("\n");
 
                     break;
