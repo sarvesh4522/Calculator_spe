@@ -76,7 +76,7 @@ public class Calculator
 
                     break;
                 default:
-                    System.out.println("Exiting now...");
+                    System.out.println("Exiting now....");
                     return;
             }
         } while (true);
